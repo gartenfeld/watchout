@@ -10,9 +10,7 @@ $(document).ready(function(){
 
   var initUser = function () {
     d3.select('.arena')
-    .selectAll('#user')
-    .data(d3.range(1))
-    .enter().append('image')
+    .append('image')
     .attr('xlink:href', 'img/girl.gif')
     .attr('id', 'user')
     .attr('width', 70)
