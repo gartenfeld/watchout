@@ -2,21 +2,21 @@ $(document).ready(function(){
 
   var maxX = 800, maxY = 600;
   var x, y, r = 20;
-  var n = 20;
+  var n = 12;
   var collisionCount = 0;
   var currentScore = 0;
   var highScore = 0;
   var enemies;
 
   var initUser = function () {
-    var user = d3.select('.arena')
-    .append('image')
-    .attr('id', 'user')
+    d3.select('.arena')
+    .selectAll('#user')
+    .data(d3.range(1))
+    .enter().append('image')
     .attr('xlink:href', 'img/girl.gif')
-    .style({
-      width: 70,
-      height: 70
-    })
+    .attr('id', 'user')
+    .attr('width', 70)
+    .attr('height', 70)
     .attr('x', maxX/2 - 35)
     .attr('y', maxY/2 - 35);
   };
